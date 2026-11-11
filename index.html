@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* formulário centralizado */
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef2f1;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    /* campos e layout organizados */
+    .campo {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    .opcoes label {
+      display: inline;
+      font-weight: normal;
+      margin-right: 12px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 2px solid #ccc;
+      border-radius: 8px; /* bordas arredondadas */
+    }
+
+    /* efeito ao focar */
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #0f766e;
+      box-shadow: 0 0 6px #0f766e;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #0f766e;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* hover nos botões */
+    button:hover {
+      background: #0b5a54;
+    }
+
+    /* responsividade */
+    @media (max-width: 480px) {
+      form {
+        padding: 16px;
+      }
+
+      button {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form action="#" method="post">
+    <h1>Formulário</h1>
+
+    <div class="campo">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+
+    <div class="campo">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="campo">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" required>
+    </div>
+
+    <div class="campo">
+      <label for="nascimento">Data de nascimento</label>
+      <input type="date" id="nascimento" name="nascimento">
+    </div>
+
+    <div class="campo">
+      <label for="curso">Curso</label>
+      <select id="curso" name="curso">
+        <option value="">Selecione</option>
+        <option>Sistemas de Informação</option>
+        <option>Ciência da Computação</option>
+        <option>Análise e Desenvolvimento de Sistemas</option>
+      </select>
+    </div>
+
+    <div class="campo opcoes">
+      <label>Sexo</label>
+      <input type="radio" id="f" name="sexo" value="feminino"><label for="f">Feminino</label>
+      <input type="radio" id="m" name="sexo" value="masculino"><label for="m">Masculino</label>
+      <input type="radio" id="o" name="sexo" value="outro"><label for="o">Outro</label>
+    </div>
+
+    <div class="campo opcoes">
+      <label>Interesses</label>
+      <input type="checkbox" id="i1" name="interesses" value="front-end"><label for="i1">Front-end</label>
+      <input type="checkbox" id="i2" name="interesses" value="back-end"><label for="i2">Back-end</label>
+      <input type="checkbox" id="i3" name="interesses" value="design"><label for="i3">Design</label>
+    </div>
+
+    <div class="campo">
+      <label for="comentarios">Comentários</label>
+      <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+    </div>
+
+    <div class="campo">
+      <label for="foto">Upload de foto</label>
+      <input type="file" id="foto" name="foto" accept="image/*">
+    </div>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpar</button>
+  </form>
+</body>
+</html>
